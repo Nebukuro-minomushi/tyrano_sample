@@ -1,7 +1,7 @@
 *start
 [freeimage layer=base]
 [freeimage layer=0]
-[title name="素直さ"] 
+[title name="正直にね"] 
 [hidemenubutton]
 [wait time=200]
 @layopt layer=0 visible=false
@@ -307,11 +307,8 @@
 [image layer=base folder=bgimage storage=pattern_shibafu.png]
 [image layer=0 x=400 y=-200  folder=bgimage storage=roulette.png]
 [image name=chip1 layer=0 x=400 y=400  folder=bgimage storage=casino_chip.png]
-
 [image name=chip2 layer=0 x=300 y=450  folder=bgimage storage=casino_chip.png]
-
 [image name=chip3 layer=0 x=500 y=500  folder=bgimage storage=casino_chip.png]
-
 [image name=chip4 layer=0 x=200 y=400  folder=bgimage storage=casino_chip.png]
 最初は勝って、気分が良かった。[l][r]
 でも……負け始めると、止まらなかった。[l][r]
@@ -324,10 +321,11 @@
 [anim name=chip1 top="-=200" time=1000 effect=easeInCirc opacity=0 ]
 このままでは、帰れない…[l][r]
 だが…[l][r]
+[cm]
 [freeimage layer=base]
 [freeimage layer=0]
 [image layer=base folder=bgimage storage=black.png]
-[image name=chip3 layer=0 x=400 y=0  folder=bgimage storage=kurofuku_man.png]
+[image name=chip3 layer=0 x=400 y=0  folder=bgimage storage=kurufuku_man.png]
 ”黒服”　お客様…追加のクレジット、必要ですか？[l][r]
 [link target=*badend2] →いる… [endlink][r]
 [link target=*home] →帰る [endlink][r]
@@ -337,10 +335,29 @@
 [cm]
 まだ勝てる[l][r]
 ここで引くわけにはいかない…！[l][r]
+[cm]
+[freeimage layer=base]
+[freeimage layer=0]
+[image layer=base folder=bgimage storage=pattern_shibafu.png]
+[image layer=0 x=400 y=-200  folder=bgimage storage=roulette.png]
+[image name=chip1 layer=0 x=400 y=400  folder=bgimage storage=casino_chip.png]
+[image name=chip2 layer=0 x=300 y=450  folder=bgimage storage=casino_chip.png]
+[image name=chip3 layer=0 x=500 y=500  folder=bgimage storage=casino_chip.png]
+[image name=chip4 layer=0 x=200 y=400  folder=bgimage storage=casino_chip.png]
+[image name=chip5 layer=0 x=450 y=300  folder=bgimage storage=casino_chip.png]
+[image name=chip6 layer=0 x=200 y=350  folder=bgimage storage=casino_chip.png]
+[image name=chip7 layer=0 x=500 y=400  folder=bgimage storage=casino_chip.png]
+[image name=chip8 layer=0 x=300 y=400  folder=bgimage storage=casino_chip.png]
 しかし、尽きるのは早かった[l][r]
 初めの勝利で得られた感覚がペースを狂わせる[l][r]
 どんどん、チップは減っていく[l][r]
+[anim name=chip4 top="-=200" time=1000 effect=easeInCirc opacity=0 ]
+[anim name=chip3 top="-=200" time=1000 effect=easeInCirc opacity=0 ]
+[anim name=chip2 top="-=200" time=1000 effect=easeInCirc opacity=0 ]
+[wa]
+[anim name=chip1 top="-=200" time=1000 effect=easeInCirc opacity=0 ]
 …全額ベットだ！[l][r]
+
 借りた額はわからない…[l][r]
 ここで勝てば…[l][r]
 [cm]
@@ -350,9 +367,18 @@
 ——結果。[l][r]
 
 「ハズレ」[l][r]
+[anim name=chip5 top="-=200" time=1000 effect=easeInCirc opacity=0 ]
+[anim name=chip6 top="-=200" time=1000 effect=easeInCirc opacity=0 ]
+[anim name=chip7 top="-=200" time=1000 effect=easeInCirc opacity=0 ]
+[anim name=chip8 top="-=200" time=1000 effect=easeInCirc opacity=0 ]
+[wa]
 [cm]
 「ザッ……」[l][r]
-
+[freeimage layer=base]
+[freeimage layer=0]
+[image layer=base folder=bgimage storage=black.png]
+[image  layer=0 x=200 y=0  folder=bgimage storage=kurufuku_group.png]
+[image  layer=0 x=400 y=0  folder=bgimage storage=pose_koshi_nukeru_kowai_man1.png]
 音もなく、黒服が数人、主人公を囲む。[l][r]
 
 ”黒服Ａ”「お客様。ご精算がまだですよ。」[l][r]
@@ -366,10 +392,17 @@
 
 ネオンの光が遠ざかる。[l][r]
 暗闇へ連れ込まれる主人公。[l][r]
-
+[freeimage layer=0]
+[image name=kurohuku  layer=0 x=200 y=0  folder=bgimage storage=kurufuku_group.png]
+[image name=death  layer=0 x=400 y=0  folder=bgimage storage=pose_koshi_nukeru_kowai_man.png]
+[anim name=kurohuku left="-=1200" time=2000 effect=easeInCirc opacity=100 ]
+[anim name=death left="-=1200" time=2000 effect=easeInCirc opacity=100 ]
 [cm]
 「……どうして……
 どうして“家に帰る”を選べなかったんだ……」[l][r]
+[cm]
+『BAD_END』[l][cm]
+
 [jump target=*start]
 
 *home
