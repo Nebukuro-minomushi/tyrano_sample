@@ -1,41 +1,80 @@
 *start
 
-[title name="な"] 
+[title name="素直さ"] 
 [hidemenubutton]
 [wait time=200]
-[backlay]
-[image name="yuu"  page=back bg storage=time3_yuu.png time=500]
-[image name="branko"  page=fore storage="buranko_businessman_smile.png"]
-[glink target=*st text=" スタート" color=gray font_clor=white size=20 width="500" y=200]
+@layopt layer=0 visible=false
+@layopt layer=1 visible=false
+[image name=yuu layer=base folder=bgimage storage=time3_yuu.png time=500]
+[image name=branko layer=0  x=550 y=200 width=200 height=200 folder=bgimage storage=buranko_businessman_smile.png visible=true]
+[image name=branko layer=0  x=0 y=100 width=1200 height=900 folder=bgimage storage=tatemono_kouen.png visible=true]
+@layopt layer=message0 visibile=false
+[position layer=message0   width=1280 height=800]
+[glink target=*st text="はじめる" color=gray font_clor=white size=20 width="500" y=400]
 [s]
-[position height=400 top=100]
-[position layer=3 width=1150 height=300 top=500 left=70 ]
-[position layer=4 page=fore frame="frame.png" margint="0" marginl="0" marginr="0" marginb="0"]
 
-[freeimage layer=0 page=back]
+
 *st
-"朝の通勤電車の中"[r]
-俺はサラリーマンの田中。営業職、35歳。[l][r]
-今日も取引先を回って、ノルマに追われる一日が始まる。[l][r]
 
+[freeimage layer=base]
+[freeimage layer=0]
+@layopt layer=message0 visible=true
+[position layer=message0 top=400 width=1280 height=300]
+[image name=yuu layer=base folder=bgimage storage=bg_train.jpg time=400]
+[image layer=0 folder=bgimage x=0 y=0 width=1280 height=800 storage=train_manin_business.png visible=true time=400]
+"朝の出勤中"[r]
+[quake count=10 time=3000 vmax=7]
+[quake count=3 time=300 hmax=10]
+[wait time=1000] 
+
+
+[freeimage layer=base]
+[freeimage layer=0]
+[image layer=base folder=bgimage storage=bg_eki_homedoor_train_open.jpg time=400]
+[image layer=0 name=tanaka folder=bgimage x=800 y=150 width=400 height=400 storage=business_eigyou_man.png visible=true time=400]
+[anim name=tanaka left="-=1200" time=1000 effect=easeInCirc opacity=100 ]
+俺はサラリーマンの田中。営業職、35歳。[l][r]
+
+
+[freeimage layer=base]
+[freeimage layer=0]
+[image name=yuu layer=base folder=bgimage storage=bg_natural_sky.jpg time=400]
+[image layer=0 width=1800 heigh=1800 x=-100 y=-1400 folder=bgimage storage=building_kaisya.png ]
+[image layer=0 name=tanaka folder=bgimage x=800 y=150 width=400 height=400 storage=business_eigyou_man.png visible=true time=400]
+[anim name=tanaka left="-=400" time=2000 effect=easeInCirc opacity=0 ]
+今日も取引先を回って、ノルマに追われる一日が始まる。[l][r]
+;会社
+[freeimage layer=base]
+[freeimage layer=0]
+[image layer=base folder=bgimage storage=greey.png time=400]
+[image layer=0 width=800 heigh=800 x=900 y=0 folder=bgimage storage=business_sabori_pc.png]
 ——仕事、家族、ローン。[r]
 どれも俺を支えてくれているはずなのに、時々重く感じる。[l][r]
 [cm]
-今日の予定は～...[r]
+今日の予定は～...[r] 
+[freeimage layer=0]
+[image layer=0 folder=bgimage x=0 y=0 width=1280 height=800 storage=techou.png visible=true time=400]
+
 外回りか[l][r]
 
 
-
-
 [cm]
-
+[freeimage layer=base]
+[freeimage layer=0]
+[freeimage layer=1]
+@layopt layer=1 visibile=true
+[image layer=base folder=bgimage x=0 y=0 width=1280 height=800 storage=bg_outside_buildings.jpg visible=true time=400]
+[image layer=0 width=300 heigh=300 x=500 y=300 folder=bgimage storage=building_pachinko.png]
+[image layer=0 width=300 heigh=300 x=900 y=250 folder=bgimage storage=tatemono_sentou.png ]
+[image layer=0 width=500 heigh=500 x=0 y=0 folder=bgimage storage=building_kaisya.png ]
+[image layer=0 width=200 heigh=200 x=900 y=500 folder=bgimage storage=car_jidouunten_man.png]
 んん～！おわったぁあああ！[l][r]
 結構早く終わったな[r]
 "時計を見ると15時"[r]
 『……ちょっとくらい、寄り道してもいいか？』[l][r]
 [glink target=*pachinko text=" →パチンコでも行くか" color=white font_clor=black size=20 width="500" y=200]
 [glink target=*sauna text=" →サウナで整おう" color=white font_clor=black size=20 width="500" y=300]
-[glink target=*home text=" →いや、今日は帰ろう" color=white font_clor=black size=20 width="500" y=400]
+[glink target=*house text=" →いや、今日は帰ろう" color=white font_clor=black size=20 width="500" y=400]
 [s]
 
 *pachinko
@@ -107,10 +146,15 @@
 俺は正直に答えた[l][r]
 当然首になった。[l][r]
 [jump target=*ruin]
-*home
+
+*house
 [cm]
-俺はまっすぐ家に帰ることにした。[l][r]
-玄関を開けると、カレーのいい香りがした。[r]
+俺は真っ直ぐ家に帰ることにした。"
+久しぶりに早く帰ったら、妻も子どもも驚いていた。"
+その日の晩、穏やかな時間を過ごした。"
+
+"——そうだ、これが本当の幸せだ。
+ [cm]
 
 
 
